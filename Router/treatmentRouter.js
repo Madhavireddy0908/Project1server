@@ -25,9 +25,15 @@ treatmentRouting.put("/:id", async (req,res)=>{
     res.send(treatment);
 });
 
-treatmentRouting.get("/:id", async (req,res)=>{
+{/*treatmentRouting.get("/:id", async (req,res)=>{
     let id = req.params.id;
     let treatment = await Treatment.findOne({_id:id});
+    res.send(treatment);
+});*/}
+
+treatmentRouting.get("/:tname", async (req,res)=>{
+    let tname = req.params.tname;
+    let treatment = await Treatment.findOne({tname:tname});
     res.send(treatment);
 });
 

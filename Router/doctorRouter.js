@@ -25,10 +25,17 @@ doctorRouting.put("/:id", async (req,res)=>{
     res.send(doctor);
 });
 
-doctorRouting.get("/:id", async (req,res)=>{
+{/*doctorRouting.get("/:id", async (req,res)=>{
     let id = req.params.id;
     let doctor = await Doctor.findOne({_id:id});
     res.send(doctor);
+});*/}
+
+doctorRouting.get("/:tname", async (req,res)=>{
+    let tname = req.params.tname;
+    let doctor = await Doctor.findOne({tname:tname});
+    res.send(doctor);
 });
+
 
 module.exports = doctorRouting;
